@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Patrick+Hand&family=El+Messiri:wght@700&display=swap");
+::-moz-selection {
+  /* Code for Firefox */
+  color: rgb(255, 255, 255);
+  background: rgb(0, 150, 0);
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 150, 0);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: rgb(255, 255, 255);
+  background-size: 400% 400%;
+  animation: gradient 60s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+#topbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 9;
+}
+#basso {
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 91;
+}
+#top {
+  display: inline-block;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, red, blue);
+  box-shadow: 0 0 10px black;
+}
+#top:active {
+  background: rgb(0, 206, 28);
+}
+#freccia:hover #top {
+  display: inline-block;
+  border-radius: 50%;
+  border: 0.2em solid #4183d7;
+}
+
+#freccia:hover #top:after {
+  border-top: 0.2em solid #4183d7;
+  border-right: 0.2em solid #4183d7;
+}
+#top {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  border: 0.2em solid #333;
+  border-radius: 50%;
+  margin-left: 0.75em;
+  transition: all 0.1s ease-out;
+}
+
+#top:after {
+  content: "";
+  display: inline-block;
+  margin-top: 1.5em;
+  width: 1.2em;
+  height: 1.2em;
+  border-top: 0.2em solid rgb(255, 255, 0);
+  border-right: 0.2em solid rgb(255, 255, 0);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transition: all 0.1s ease-out;
+}
+#top:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  margin-top: 0.8em;
+  width: 1.2em;
+  height: 1.2em;
+  border-top: 0.2em solid rgb(0, 255, 0);
+  border-right: 0.2em solid rgb(0, 255, 0);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transition: all 0.1s ease-out;
+}
+#top:hover:after {
+  margin-top: 1.3em;
+  border-top: 0.2em solid #4183d7;
+  border-right: 0.2em solid #4183d7;
+}
+#top:hover:before {
+  margin-top: 0.7em;
+  border-top: 0.2em solid #4183d7;
+  border-right: 0.2em solid #4183d7;
+}
+
+#header {
+  width: 100%;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5px;
+  z-index: 999;
+}
+.logo {
+  margin: 10px;
+}
+.logo a {
+  position: absolute;
+  visibility: hidden;
+  color: rgb(0, 100, 0);
+  font-family: "Patrick Hand", cursive;
+  text-decoration: none;
+  z-index: 1;
+}
+.topnav {
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #007417;
+  background: #fff;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-align: center;
+  padding: 8px 18px;
+  margin-left: 2px;
+  text-decoration: none;
+  backdrop-filter: blur(25px);
+}
+.topnav a:hover {
+  background: linear-gradient(
+    115deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.25)
+  );
+  color: rgb(255, 255, 255);
+  box-shadow: inset 0px 0px 5px white, 0px 0px 10px black;
+  transition: 0.5s;
+}
+.topnav a.active {
+  background: #015211;
+  color: rgb(255, 255, 255);
+  border: none;
+}
+.topnav a.active:hover {
+  background: rgba(0, 0, 0, 0.29);
+  text-decoration: underline;
+}
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  #header {
+    /* display: flex; */
+    justify-content: right;
+    align-items: right;
+  }
+  .logo a {
+    position: absolute;
+    visibility: visible;
+    width: 50px;
+    display: flex;
+    justify-content: left;
+    float: left;
+  }
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    border-radius: 0;
+    margin: 2px;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-color: #0e6344;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a.icon:hover {
+    background-color: rgb(1, 182, 43);
+  }
+}
+
+.headernav {
+  text-align: center;
+}
+.socialnav {
+  text-align: center;
+  padding: 5px;
+}
+.socialnav a {
+  text-decoration: none;
+  color: white;
+  margin: 1px;
+  padding: 2px;
+  font-size: 30px;
+}
+.socialnav a:hover {
+  color: rgb(173, 255, 47);
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+}
+.logo_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.logo_img {
+  background: none;
+  margin: 10px;
+  transition: all 0.5s;
+}
+.logo_img a h1 {
+  text-decoration: none;
+  color: rgb(0, 150, 0);
+  font-size: 3.2rem;
+  text-shadow: 0 0 10px black;
+  font-family: "Cookie", cursive;
+
+  z-index: 9;
+}
+.logo_img:hover {
+  transform: scale(1.1);
+}
+.logo_img:hover a h1 {
+  color: rgb(255, 255, 255);
+}
+
+/* Main Content */
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container::before {
+  content: "";
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle(20% at right 60%);
+  z-index: -9;
+}
+.main-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(20% at 10% 20%);
+  z-index: -9;
+}
+.x-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.card-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  width: 320px;
+  height: 450px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+}
+.card:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.content {
+  margin: 40px;
+}
+.content h1 {
+  font-family: "Patrick Hand", cursive;
+}
+.content a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 138, 0);
+  padding: 8px 15px;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: "El Messiri", sans-serif;
+  transition: all 0.5s;
+}
+.content a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgb(2, 155, 2);
+  font-size: 1.1rem;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+}
+.hackerrank-card {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: "El Messiri", sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  width: 300px;
+  height: 100px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+}
+.hackerrank-card:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  margin: 0;
+}
+.footer-container {
+  text-align: center;
+}
+.about-container {
+  margin: 5px;
+  padding: 5px;
+}
+.social a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(255, 242, 224);
+  padding: 10px;
+}
+.social a i {
+  font-size: 3rem;
+}
+.social a:hover {
+  background: rgba(255, 255, 255, 0.297);
+  border-radius: 5px;
+}
+#instagram:hover {
+  color: rgb(221, 0, 255);
+}
+#linkedin:hover {
+  color: rgb(0, 17, 255);
+}
+#youtube:hover {
+  color: rgb(255, 0, 0);
+}
+#hackerrank:hover {
+  color: rgb(0, 196, 26);
+}
+.copyright {
+  padding: 15px;
+}
+.copyright a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: all 0.5s;
+}
+.copyright a:hover {
+  color: rgb(0, 208, 0);
+  transform: scale(1.1);
+}
+.x1-subcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.x1-content {
+  width: 400px;
+  text-align: center;
+}
+.x1-content p {
+  font-size: 1.7rem;
+  padding: 10px;
+  color: white;
+}
