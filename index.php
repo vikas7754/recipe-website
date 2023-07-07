@@ -5,8 +5,8 @@ include_once('includes/header.php');
 <div class="x1-container">
 	<div class="x1-subcontainer">
 		<div class="x1-content">
-			<h1>Hello</h1>
-			<p>To add you own recipes and reviews, please login. <br> If you are not registred then please register.</p>
+			<h1>Hello & Welcome</h1>
+			<p>To add you own recipes and reviews, please login. If you are not registred then please register.</p>
 			<a href="registration.php" class="btn btn-primary btn-md">Register</a>
 		</div>
 		<div>
